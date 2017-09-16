@@ -9,9 +9,10 @@ import java.util.regex.Pattern;
 
 public class Main {
 
+	static String EOLPattern = "[ \\r\\n\\t]*"; 
 	static String namePattern = "[a-zA-Z_0-9]*";
 	static String funcPattern = "(\\x2A\\x2F\r?\n)?" + namePattern + " (" + namePattern + ")\\(" + "(" + namePattern
-			+ " (" + namePattern + ")(,[ \r\n\t]*)?)*\\)";
+			+ " (" + namePattern + ")(,[ \r\n\t]*)?)*\\)" + EOLPattern + "\\{";
 
 	static String template = "/*\r\n" + " * Function Name: \r\n" + " *\r\n" + " * Description:  \r\n" + " *\r\n"
 			+ " * Parametrs:\r\n" + " *  Input:\r\n" + " *  Output:\r\n" + " *\r\n" + " * Return values:\r\n"
